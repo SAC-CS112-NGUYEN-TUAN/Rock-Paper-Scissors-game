@@ -33,17 +33,19 @@ public class RBSgame {
 		
 		
 		//debug
-		System.out.println(computerNum);
+		//System.out.println(computerNum);
 		System.out.println(CPUpick);
 		
 		String choice =
 				JOptionPane.showInputDialog("==========Let's play Rock Paper Scissors=========\nPlease type your Pick\nRock Paper Scissors");
 		do {
 			
+						
+		if (CPUpick.equalsIgnoreCase(choice)){
+			
+			//REpick number for CPU
 			computerNum = 1 + (int) (Math.random()*3);
-			
-			//REpick number again for draw game
-			
+											
 			if(computerNum == 1){
 				CPUpick = "Rock";
 			}
@@ -53,18 +55,18 @@ public class RBSgame {
 			else if (computerNum == 3){
 				CPUpick = "Scissors" ;
 			}
-			System.out.println(CPUpick);
-			
+			System.out.println(CPUpick);//debug checking CPU pick
 			//end of repick number
-			
-		if (CPUpick.equalsIgnoreCase(choice)){
-		
-								choice 
-								=JOptionPane.showInputDialog("Draw !!! please type your pick again");
+								
+			choice 
+				=JOptionPane.showInputDialog("Draw !!! please type your pick again");
+								
+															
 		}
+		
 		}
 		while (CPUpick.equalsIgnoreCase(choice));
-		
+		 System.out.println(CPUpick);//debug checking CPU pick
 		 if (!CPUpick.equalsIgnoreCase(choice)) {
 			if (CPUpick.equalsIgnoreCase("Rock")) if (choice.equals("Paper")){
 				JOptionPane.showMessageDialog(null,"Player wins !!!\nCPU picked:"+CPUpick);
