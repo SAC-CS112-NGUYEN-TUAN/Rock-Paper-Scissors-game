@@ -7,7 +7,8 @@ public class RBSgame {
 		Scanner input = new Scanner(System.in);
 		Scanner cont = new Scanner(System.in);	
 		// vs CPU
-		
+		String play ="";
+		do {
 		int computerNum;
 		computerNum = 1 + (int) (Math.random()*3);
 		
@@ -22,51 +23,51 @@ public class RBSgame {
 		else if (computerNum == 3){
 			CPUpick = "Scissors" ;
 		}
-		char play;
-		
+				
 		//end of converting
 		
 		
 		//debug
-		//System.out.println(computerNum);
-		//System.out.println(CPUpick);
-		do {
-		int choice;
-		System.out.println("====ROCK PAPER SCISSORS GAME====\nRock = 1, Paper = 2, Scissors = 3\nPlease enter your pick:");
-		choice = input.nextInt();
+		System.out.println(computerNum);
+		System.out.println(CPUpick);
+		
+		String choice =
+				JOptionPane.showInputDialog("Let's play Rock Paper Scissors\nPlease type your Pick\nRock Paper Scissors");
 		
 		//while loop
-		while (computerNum==choice){
-			System.out.println("Draw !, lets play again\nPlease enter your pick:");
-			choice = input.nextInt();
+		if (CPUpick.equals(choice)){
+		while (CPUpick.contentEquals(choice)){
+				choice = 
+					JOptionPane.showInputDialog("Draw !!! please type your pick again");
 		}
-		if (computerNum != choice) {
-			if (computerNum ==1) if (choice == 2){
-				System.out.println("Player win !!! CPU picked "+ CPUpick);
+		}
+		else  {
+			if (CPUpick.equals("Rock")) if (choice.equals("Paper")){
+				JOptionPane.showMessageDialog(null,"Player wins !!!\nCPU picked:"+CPUpick);
 			}
-			else if (computerNum ==1) if (choice == 3){
-				System.out.println("CPU win !!! CPU picked "+ CPUpick);
+			else if (CPUpick.equals("Rock")) if (choice.equals("Scissors")){
+				JOptionPane.showMessageDialog(null,"CPU wins !!!\nCPU picked:"+CPUpick);
 			}
-			if (computerNum == 2) if (choice == 1){
-				System.out.println("CPU win !!! CPU picked "+ CPUpick);
+			if (CPUpick.equals("Paper")) if (choice.equals("Rock")){
+				JOptionPane.showMessageDialog(null,"CPU wins !!!\nCPU picked:"+CPUpick);
 			}	
-			else if (computerNum == 2) if (choice == 3){
-				System.out.println("Player win !!!CPU picked "+ CPUpick);
+			else if (CPUpick.equals("Paper")) if (choice.equals("Scissors")){
+				JOptionPane.showMessageDialog(null,"Player wins !!!\nCPU picked:"+CPUpick);
 			}
-			if (computerNum == 3) if (choice == 1){
-				System.out.println("Player win !!! CPU picked "+ CPUpick);
-			}
-			else if (computerNum == 3) if (choice == 2){
-				System.out.println("CPU win !!! CPU picked "+ CPUpick);
+			if (CPUpick.equals("Scissors")) if (choice.equals("Paper")){
+				JOptionPane.showMessageDialog(null,"CPU wins !!!\nCPU picked:"+CPUpick);
+			}	
+			else if (CPUpick.equals("Scissors")) if (choice.equals("Rock")){
+				JOptionPane.showMessageDialog(null,"Player wins !!!\nCPU picked:"+CPUpick);
 			}
 		}
 		
-	System.out.println("Wanna play again ? \nY / N");
-	play = cont.next().charAt(0);
-		}
-	while( play =='y'); 
+	play =
+			JOptionPane.showInputDialog(null,"Do you wanna play again\nType ; Y N");
 		
 	
+		
+		}
+		while (play.equals("y"));
 	}
-	}
-
+}
