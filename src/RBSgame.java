@@ -8,15 +8,17 @@ public class RBSgame {
 		Scanner cont = new Scanner(System.in);	
 		// vs CPU
 		String play ="";
-		
-		
-		do {
-		
 		int computerNum;
+		String CPUpick ="";
+		
+		
+		do {//Replay loop
+		
+		
 		computerNum = 1 + (int) (Math.random()*3);
 		
 		//experiment convert random int to string"
-		String CPUpick ="";
+		
 		if(computerNum == 1){
 			CPUpick = "Rock";
 		}
@@ -37,6 +39,24 @@ public class RBSgame {
 		String choice =
 				JOptionPane.showInputDialog("==========Let's play Rock Paper Scissors=========\nPlease type your Pick\nRock Paper Scissors");
 		do {
+			
+			computerNum = 1 + (int) (Math.random()*3);
+			
+			//REpick number again for draw game
+			
+			if(computerNum == 1){
+				CPUpick = "Rock";
+			}
+			else if (computerNum == 2){
+				CPUpick = "Paper";
+			}
+			else if (computerNum == 3){
+				CPUpick = "Scissors" ;
+			}
+			System.out.println(CPUpick);
+			
+			//end of repick number
+			
 		if (CPUpick.equalsIgnoreCase(choice)){
 		
 								choice 
